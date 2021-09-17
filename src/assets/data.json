@@ -1,0 +1,100 @@
+{
+  "words": [
+    {
+      "englishWord": "child",
+      "translateWord": "ребенок",
+      "edit": false,
+      "id": 2.5140131638027494,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "usual",
+      "translateWord": "обычно",
+      "edit": false,
+      "id": 1.4870598131358947,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "young",
+      "translateWord": "молодой",
+      "edit": false,
+      "id": 4.0450531327192785,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "ever",
+      "translateWord": "когда-либо",
+      "edit": false,
+      "id": 0.017091342816899502,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "list",
+      "translateWord": "список",
+      "edit": false,
+      "id": 2.657249130023369,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "feel",
+      "translateWord": "чувствовать",
+      "edit": false,
+      "id": 0.19749654504536251,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "talk",
+      "translateWord": "говорить",
+      "edit": false,
+      "id": 4.443096149311331,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "bird",
+      "translateWord": "птица",
+      "edit": false,
+      "id": 0.02403074957903706,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "soon",
+      "translateWord": "скоро",
+      "edit": false,
+      "id": 0.8142100553052822,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "song",
+      "translateWord": "песня",
+      "edit": false,
+      "id": 2.28646678336668,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "sing",
+      "translateWord": "петь",
+      "edit": false,
+      "id": 2.0884574331372,
+      "isshow": false,
+      "inputisopened": false
+    },
+    {
+      "englishWord": "ship",
+      "translateWord": "корабль",
+      "edit": false,
+      "id": 0.5128640963945075,
+      "isshow": false,
+      "inputisopened": false
+    }
+  ]
+}
