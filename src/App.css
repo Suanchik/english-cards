@@ -24,6 +24,16 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.wordsArea {
+  height: 360px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.wordsArea::-webkit-scrollbar {
+  width: 0;
+}
+
 .learnwords {
   text-align: center;
   border: solid 2px black;
@@ -48,10 +58,10 @@
   margin-top: 20px;
   padding: 30px;
   border-radius: 10px 10px 0 0;
-  height: 400px;
   border: solid 2px black;
   background-color: rgba(0, 0, 0, 0.3);
   border: solid 2px white;
+  height: 400px;
 }
 
 .englishWord {
@@ -59,10 +69,6 @@
   border: solid 1px black;
   background-color: white;
   text-align: center;
-}
-
-.englishWord:hover {
-  background-color: rgb(213, 213, 255);
 }
 
 .russianWord {
@@ -150,7 +156,12 @@ input {
   padding: 3px 40px 3px 40px;
   border-radius: 10px;
   font-weight: bold;
-  color: rgb(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255, 0.6);
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  margin-left: 32px;
+  margin-top: 40%;
 }
 
 .tochki {
@@ -200,10 +211,16 @@ input {
 
 .popap img {
   display: inline;
-  border-radius: 50%;
+  border-radius: 1px 9px 9px 1px;
   cursor: pointer;
   padding: 3px;
   opacity: 0.5;
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  background-color: #fff;
+  margin-left: 5px;
+  margin-top: 6px;
 }
 
 .popap img:hover {
@@ -263,7 +280,7 @@ input {
 }
 
 .open {
-  transform: translateY(0px);
+  transform: translateY(-100px);
   transition: transform 0.8s ease-in;
 }
 
@@ -278,4 +295,20 @@ input {
 
 .upDoun {
   width: 30px;
+  display: inline-block;
+}
+
+.downButton {
+  float: right;
+}
+
+.pages {
+  display: inline-block;
+  width: 30px;
+  margin-left: 37%;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+  border-radius: 2px;
 }

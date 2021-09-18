@@ -81,18 +81,10 @@
       "inputisopened": false
     },
     {
-      "englishWord": "sing",
-      "translateWord": "петь",
+      "englishWord": "watch",
+      "translateWord": "наблюдать",
       "edit": false,
-      "id": 2.0884574331372,
-      "isshow": false,
-      "inputisopened": false
-    },
-    {
-      "englishWord": "ship",
-      "translateWord": "корабль",
-      "edit": false,
-      "id": 0.5128640963945075,
+      "id": 0.5867031810327772,
       "isshow": false,
       "inputisopened": false
     }

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Input from './input';
 import { Fragment } from 'react';
 import tochki from './assets/img/tochki.png';
-import close from './assets/img/close.svg';
+import close from './assets/img/x.png';
 import up from './assets/img/up.png';
 import down from './assets/img/down.png';
 
@@ -13,6 +13,7 @@ const Cards = () => {
     const [slova, setslova] = useState(null);
     const [russvalue, setrussvalue] = useState('');
     const [englvalue, setengvalue] = useState('');
+    const [carrentPage, setcarrentPage] = useState(1)
 
     const [startNumber, setstartNumber] = useState(0);
     const [endNumber, setendNumber] = useState(10);
@@ -20,12 +21,16 @@ const Cards = () => {
     const refInputRuss = useRef();
     const refInputEngl = useRef();
 
-    const halfSlova = slova?.filter((word, index) => index >= startNumber && index < endNumber);
+    let slovaCopy = null;
+    slovaCopy = slova && slova.length !== 0 ? [...slova].reverse() : null;
+
+    const halfSlova = slovaCopy?.filter((word, index) => index >= startNumber && index < endNumber);
 
     const UpButton = () => {
         if (startNumber !== 0) {
             setstartNumber(startNumber - 10);
             setendNumber(endNumber - 10);
+            setcarrentPage(carrentPage - 1)
         }
     }
 
@@ -33,6 +38,7 @@ const Cards = () => {
         if (slova.length > endNumber) {
             setstartNumber(startNumber + 10);
             setendNumber(endNumber + 10);
+            setcarrentPage(carrentPage + 1)
         }
     }
 
@@ -64,8 +70,8 @@ const Cards = () => {
     const addWord = (newWordObj) => {
         axios.post(`http://localhost:3001/words`, newWordObj).then(() => {
             const changedWords = [
-                newWordObj,
                 ...slova,
+                newWordObj
             ]
             setslova(changedWords)
         })
@@ -113,10 +119,16 @@ const Cards = () => {
         <Fragment>
             <Input addWord={addWord} />
             <div className="wordsContainer">
-                <div className="upDoun">
-                    <img onClick={UpButton} src={up} alt="up" />
+                <div className="arrows">
+                    <div className="upDoun">
+                        <img onClick={UpButton} src={up} alt="up" />
+                    </div>
+                    <div className="pages">{carrentPage}</div>
+                    <div className="upDoun downButton">
+                        <img onClick={Dounbutton} src={down} alt="down" />
+                    </div>
                 </div>
-                <div>
+                <div className="wordsArea">
                     {halfSlova
                         ?
                         halfSlova.map((word, index) =>
@@ -161,12 +173,9 @@ const Cards = () => {
                                 }
                             </div>
                         ) :
-                        <span className="pustoePole">пустое поле</span>
+                        <span className="pustoePole">ПРОСТО НЕТ СЛОВ</span>
 
                     }
-                </div>
-                <div className="upDoun">
-                    <img onClick={Dounbutton} src={down} alt="down" />
                 </div>
             </div>
         </Fragment>
