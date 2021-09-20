@@ -1,7 +1,43 @@
 .App {
-  width: 400px;
+  width: 600px;
   margin: auto;
-  margin-top: 200px;
+}
+
+.open_window {
+  transform: translateY(0px);
+  transition: transform 0.8s ease-in-out;
+  z-index: 2;
+  position: absolute;
+}
+
+.hide_window {
+  transform: translateY(-1500px);
+}
+
+.filter_catds {
+  z-index: -2;
+  filter: blur(7px);
+  position: fixed;
+}
+
+.your_dictionary {
+  text-align: center;
+  border: solid 2px black;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  margin-left: 20px;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 110px;
+}
+
+.your_dictionary:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: solid 2px white;
+  color: white;
 }
 
 .closeWindiw {
@@ -15,6 +51,7 @@
   border-radius: 0 0 5px 5px;
   margin-top: 2px;
   background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 100px;
 }
 
 .closeWindiw:hover {
@@ -24,291 +61,82 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.wordsArea {
-  height: 360px;
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
-.wordsArea::-webkit-scrollbar {
-  width: 0;
-}
-
-.learnwords {
-  text-align: center;
-  border: solid 2px black;
-  padding: 30px;
-  border-radius: 10px;
-  width: 300px;
-  margin-left: 20px;
-  font-size: larger;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.learnwords:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-  border: solid 2px white;
-  color: white;
-  /* background-color: rgb(255, 255, 255, 0.3); */
-}
-
-.wordsContainer {
-  margin-top: 20px;
-  padding: 30px;
-  border-radius: 10px 10px 0 0;
-  border: solid 2px black;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: solid 2px white;
-  height: 400px;
-}
-
-.englishWord {
-  padding: 5px 12px 5px 12px;
-  border: solid 1px black;
-  background-color: white;
-  text-align: center;
-}
-
-.russianWord {
-  border: solid 1px black;
-  background-color: rgb(255, 132, 110);
-  padding: 5px 12px 5px 12px;
-  color: white;
-  text-align: center;
-}
-
-.russianWord:hover {
-  background-color: tomato;
-  color: white;
-}
-
-.proces {
-  background-color: white;
-  border: solid 2px red;
-  padding: 5px 12px 5px 12px;
-}
-
-.words {
-  display: inline-block;
-  min-height: 20px;
-  min-width: 150px;
-  max-width: 250px;
-  margin: 3px 0 0 80px;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: hidden;
-  word-wrap: break-word;
-  position: relative;
-}
-
-.inputPlace {
-  display: flex;
-  text-align: center;
-  padding: 15px;
-  border-radius: 10px 10px 0 0;
-}
-
-.button {
-  border: solid 2px white;
-  color: white;
-  width: 376px;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 5px 5px 5px 5px;
-  cursor: pointer;
-  text-align: center;
-  background-color: rgb(152, 152, 255);
-}
-
-.button:hover {
-  background-color: blue;
-}
-
-button:active {
-  background-color: rgb(155, 208, 253);
-}
-
-.englishInput {
-  margin-left: 10px;
-}
-
-.englishInput div {
-  margin-bottom: 7px;
-  font-weight: bold;
-}
-
-.russianInput div {
-  font-weight: bold;
-  margin-bottom: 7px;
-}
-
-input {
-  height: 30px;
-  border-radius: 10px;
-  border: none;
-  padding-left: 10px;
-  outline: none;
-}
-
-.pustoePole {
-  padding: 3px 40px 3px 40px;
-  border-radius: 10px;
-  font-weight: bold;
-  color: rgb(255, 255, 255, 0.6);
-  display: inline-block;
-  width: 200px;
-  text-align: center;
-  margin-left: 32px;
-  margin-top: 40%;
-}
-
-.tochki {
+.infoContainer .closeInfo_of_word {
   width: 15px;
-  opacity: 0;
-  margin-left: 5px;
-  background-color: #fff;
-  padding: 0 2px 0 2px;
-  border-radius: 5px;
-}
-
-.wordsContainer .words:hover ~ .tochki {
-  opacity: 0.4;
-}
-
-.tochki:hover {
-  opacity: 0.8;
+  margin-left: 95%;
   cursor: pointer;
-}
-
-.popap {
-  display: flex;
-}
-.popap_container {
-  display: flex;
-  margin: 3px 0 0px 74px;
-}
-
-.inputPlace2 {
-  display: flex;
   margin-top: 10px;
-  margin-left: 21px;
-}
-
-.inputPlace2 input {
-  height: 25px;
-  width: 130px;
-  background-color: rgb(224, 240, 255);
-  border-radius: 5px;
-  margin-bottom: 3px;
-  border: solid 1px black;
-}
-
-.inputPlace2 .rightInput {
-  margin-left: 7px;
-}
-
-.popap img {
-  display: inline;
-  border-radius: 1px 9px 9px 1px;
-  cursor: pointer;
-  padding: 3px;
   opacity: 0.5;
-  width: 18px;
-  height: 18px;
-  padding: 3px;
+}
+
+.infoContainer .closeInfo_of_word:hover {
+  opacity: 1;
+}
+
+.infoContainer {
   background-color: #fff;
-  margin-left: 5px;
-  margin-top: 6px;
+  width: 600px;
+  height: 650px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 2px 0 black;
+  z-index: 2;
+  margin-top: 160px;
 }
 
-.popap img:hover {
-  opacity: 0.9;
+.englword_russword {
+  margin-left: 20px;
+  margin-right: 30px;
+  padding: 5px 0 5px 10px;
+  font-size: 30px;
+  background-color: #c4dfe6;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-.close {
-  margin-top: 10px;
-}
-
-.deleteChange {
-  width: 75px;
-  margin: 5px 0 5px 5px;
-  padding: 3px 5px 3px 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline;
-  text-align: center;
+.words_info_block {
+  display: grid;
+  grid-template-columns: 45% 55%;
   background-color: #fff;
+  margin: 20px 20px 0 20px;
+  height: 550px;
 }
 
-.deleteChange:hover {
-  font-weight: bold;
-}
-
-.changeDiv span:hover {
-  font-weight: bold;
-}
-
-.changeDiv div:hover {
-  font-weight: bold;
-}
-
-.changeDiv {
-  display: flex;
-  margin-top: 5px;
-  margin-left: 74px;
-}
-
-.changeDiv div {
-  width: 88px;
-  padding: 3px 0px 5px 0px;
+.words_info_block textarea {
+  outline: none;
   border-radius: 5px;
-  cursor: pointer;
-  color: black;
-  text-align: center;
-  margin-left: 4px;
-  background-color: rgb(255, 255, 255);
-}
-
-.englishWord2:hover .tochki {
-  opacity: 0;
-}
-
-.window {
-  transform: translateY(-1000px);
-}
-
-.open {
-  transform: translateY(-100px);
-  transition: transform 0.8s ease-in;
-}
-
-.upDoun img {
-  width: 20px;
+  resize: none;
+  border: solid 2px #66a5ad;
   padding: 5px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  text-align: center;
 }
 
-.upDoun {
-  width: 30px;
-  display: inline-block;
+.words_info_block div {
+  margin-bottom: 10px;
 }
 
-.downButton {
-  float: right;
-}
-
-.pages {
-  display: inline-block;
-  width: 30px;
-  margin-left: 37%;
-  background-color: #fff;
-  text-align: center;
-  margin-bottom: 5px;
+.words_info_keys {
   font-weight: bold;
-  border-radius: 2px;
+}
+
+.words_info_values {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.defaultValue {
+  opacity: 0.5;
+}
+
+.changeInfo {
+  font-size: 22px;
+  width: 600px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  color: #66a5ad;
+  box-shadow: 0 0 1px 0 black;
+}
+
+.changeInfo:hover {
+  color: black;
 }

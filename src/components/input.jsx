@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
+import './input.css';
 
 function Input({ addWord }) {
 
@@ -17,6 +18,12 @@ function Input({ addWord }) {
                 id: Math.random() * 5,
                 isshow: false,
                 inputisopened: false,
+                info: {
+                    wordEngl: englvalue,
+                    sinonim: null,
+                    mnchislo: null,
+                    examples: ""
+                }
             }
             addWord(newObject);
             setrussvalue('');
@@ -32,7 +39,7 @@ function Input({ addWord }) {
                 <div className="russianInput"><div>рус</div><input ref={rusRef} onChange={() => setrussvalue(rusRef.current.value)} value={russvalue} /></div>
                 <div className="englishInput"><div>eng</div><input ref={engRef} onChange={() => setengvalue(engRef.current.value)} value={englvalue} /></div>
             </div>
-            <div className="button" onClick={addNewWord}>ДОБАВИТЬ СЛОВО</div>
+            <div className="add_word" onClick={addNewWord}>ДОБАВИТЬ СЛОВО</div>
         </div>
     )
 }

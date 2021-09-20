@@ -1,14 +1,14 @@
-import './App.css';
+import './cards.css';
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import Input from './input';
 import { Fragment } from 'react';
-import tochki from './assets/img/tochki.png';
-import close from './assets/img/x.png';
-import up from './assets/img/up.png';
-import down from './assets/img/down.png';
+import tochki from './../assets/img/tochki.png';
+import close from './../assets/img/x.svg';
+import up from './../assets/img/up.png';
+import down from './../assets/img/down.png';
 
-const Cards = () => {
+const Cards = React.memo(({ showWordInfo }) => {
 
     const [slova, setslova] = useState(null);
     const [russvalue, setrussvalue] = useState('');
@@ -118,37 +118,38 @@ const Cards = () => {
     return (
         <Fragment>
             <Input addWord={addWord} />
-            <div className="wordsContainer">
-                <div className="arrows">
-                    <div className="upDoun">
+            <div className="list_container">
+                <div className="arrows_block">
+                    <div className="arrow_up">
                         <img onClick={UpButton} src={up} alt="up" />
                     </div>
                     <div className="pages">{carrentPage}</div>
-                    <div className="upDoun downButton">
+                    <div className="arrow_up downButton">
                         <img onClick={Dounbutton} src={down} alt="down" />
                     </div>
                 </div>
-                <div className="wordsArea">
+                <div className="words_block">
                     {halfSlova
                         ?
                         halfSlova.map((word, index) =>
                             <div key={index}>
                                 {word.edit
                                     ?
-                                    <div className="englishWord2">
+                                    <div className="englishWord_block">
                                         <div className="englishWord words" onClick={() => translater(word.id)}>{word.englishWord}</div>
+                                        <div onClick={() => showWordInfo(word.info, word.id, word.englishWord, word.translateWord)} className="show_info_of_word">...inf</div>
                                     </div>
                                     :
                                     <div>{
                                         !word.inputisopened ?
-                                            <div onClick={() => translater(word.id)} className={word.isshow ? "proces words" : "russianWord words"}>{word.translateWord}</div>
+                                            <div onClick={() => translater(word.id)} className={word.isshow ? "changing_word words" : "russianWord words"}>{word.translateWord}</div>
                                             :
-                                            <div className="inputPlace1">
-                                                <div className="inputPlace2">
+                                            <div className="change_input_place-1">
+                                                <div className="change_input_place-2">
                                                     <input ref={refInputRuss} placeholder="рус" onChange={() => setrussvalue(refInputRuss.current.value)} value={russvalue} ref={refInputRuss} />
-                                                    <input className="rightInput" placeholder="eng" onChange={() => setengvalue(refInputEngl.current.value)} value={englvalue} ref={refInputEngl} />
+                                                    <input className="right_change_input" placeholder="eng" onChange={() => setengvalue(refInputEngl.current.value)} value={englvalue} ref={refInputEngl} />
                                                 </div>
-                                                <div className="changeDiv">
+                                                <div className="changes_block">
                                                     <div onClick={() => changeWord(word.id)}>добавить</div>
                                                     <div onClick={() => showaddmenu(word.id)}>закрыть</div>
                                                 </div>
@@ -180,6 +181,6 @@ const Cards = () => {
             </div>
         </Fragment>
     )
-}
+})
 
 export default Cards;
