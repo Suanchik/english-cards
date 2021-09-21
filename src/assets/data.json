@@ -9,7 +9,7 @@
       "inputisopened": false,
       "info": {
         "sinonim": "kid, baby",
-        "mnchislo": "children",
+        "mnchislo": "children n nmnnm",
         "past": "",
         "examples": "He is but a child - Он всего лишь ребёнок. She's such a child! - Она такой ребёнок!. Нe is our only child - Он — наш единственный ребёнок."
       }
@@ -22,6 +22,7 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
+        "photo": null,
         "sinonim": "kid, baby",
         "mnchislo": "children",
         "past": "",
@@ -36,19 +37,7 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
-        "sinonim": "",
-        "mnchislo": "",
-        "examples": ""
-      }
-    },
-    {
-      "englishWord": "list",
-      "translateWord": "список",
-      "edit": false,
-      "id": 2.657249130023369,
-      "isshow": false,
-      "inputisopened": false,
-      "info": {
+        "photo": null,
         "sinonim": "",
         "mnchislo": "",
         "examples": ""
@@ -62,6 +51,7 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
+        "photo": null,
         "sinonim": "",
         "mnchislo": "",
         "past": "felt (fell)",
@@ -78,21 +68,8 @@
       "info": {
         "sinonim": "speak",
         "mnchislo": "",
+        "past": "ыооыоыо",
         "examples": ""
-      }
-    },
-    {
-      "englishWord": "bird",
-      "translateWord": "птица",
-      "edit": false,
-      "id": 0.02403074957903706,
-      "isshow": false,
-      "inputisopened": false,
-      "info": {
-        "sinonim": "kid, baby",
-        "mnchislo": "children",
-        "past": "",
-        "examples": "He is but a child - Он всего лишь ребёнок. She's such a child! - Она такой ребёнок!. Нe is our only child - Он — наш единственный ребёнок."
       }
     },
     {
@@ -103,6 +80,7 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
+        "photo": null,
         "sinonim": "kid, baby",
         "mnchislo": "children",
         "past": "",
@@ -117,6 +95,7 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
+        "photo": null,
         "sinonim": "",
         "mnchislo": "songs",
         "examples": "I like this song - мне нравится это песня"
@@ -130,6 +109,7 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
+        "photo": null,
         "sinonim": "look after",
         "mnchislo": "",
         "examples": "i watch tv every day"
@@ -145,7 +125,52 @@
       "info": {
         "sinonim": "make",
         "mnchislo": "",
+        "past": "did (done)",
         "examples": "I do it a lot of time - я это делаю часто."
+      }
+    },
+    {
+      "englishWord": "think",
+      "translateWord": "думать",
+      "edit": false,
+      "id": 4.603074229051456,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "sinonim": null,
+        "mnchislo": null,
+        "past": "",
+        "examples": "i think so"
+      }
+    },
+    {
+      "englishWord": "houm",
+      "translateWord": "дом",
+      "edit": false,
+      "id": 1.8752296220504272,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "pen",
+      "translateWord": "ручка",
+      "edit": false,
+      "id": 0.3935126204665296,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
       }
     }
   ]

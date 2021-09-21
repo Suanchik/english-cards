@@ -7,7 +7,6 @@ import Cards from './components/cards';
 
 const App = () => {
 
-  const [window, setwindow] = useState(false);
   const [infowindow, stinfowindow] = useState(false);
   const [wordsEnglRus, setwordsEnglRus] = useState(null);
   const [showInfo, setshowInfo] = useState(false);
@@ -28,7 +27,6 @@ const App = () => {
       console.log(document.body.classList.remove('bodyImg'))
     }
   }
-
 
   return (
     <div className="App">

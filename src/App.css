@@ -126,6 +126,10 @@
   opacity: 0.5;
 }
 
+.wordPhoto {
+  height: 250px;
+}
+
 .changeInfo {
   font-size: 22px;
   width: 600px;

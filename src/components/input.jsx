@@ -19,10 +19,11 @@ function Input({ addWord }) {
                 isshow: false,
                 inputisopened: false,
                 info: {
-                    wordEngl: englvalue,
+                    past: "",
                     sinonim: null,
                     mnchislo: null,
-                    examples: ""
+                    examples: "",
+                    photo: null
                 }
             }
             addWord(newObject);
