@@ -22,7 +22,6 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
-        "photo": null,
         "sinonim": "kid, baby",
         "mnchislo": "children",
         "past": "",
@@ -37,7 +36,6 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
-        "photo": null,
         "sinonim": "",
         "mnchislo": "",
         "examples": ""
@@ -51,7 +49,6 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
-        "photo": null,
         "sinonim": "",
         "mnchislo": "",
         "past": "felt (fell)",
@@ -80,7 +77,6 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
-        "photo": null,
         "sinonim": "kid, baby",
         "mnchislo": "children",
         "past": "",
@@ -94,8 +90,8 @@
       "id": 2.28646678336668,
       "isshow": false,
       "inputisopened": false,
+      "photo": null,
       "info": {
-        "photo": null,
         "sinonim": "",
         "mnchislo": "songs",
         "examples": "I like this song - мне нравится это песня"
@@ -109,7 +105,6 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
-        "photo": null,
         "sinonim": "look after",
         "mnchislo": "",
         "examples": "i watch tv every day"
@@ -127,7 +122,8 @@
         "mnchislo": "",
         "past": "did (done)",
         "examples": "I do it a lot of time - я это делаю часто."
-      }
+      },
+      "photo": null
     },
     {
       "englishWord": "think",
@@ -141,7 +137,8 @@
         "mnchislo": null,
         "past": "",
         "examples": "i think so"
-      }
+      },
+      "photo": null
     },
     {
       "englishWord": "houm",

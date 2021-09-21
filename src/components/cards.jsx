@@ -137,7 +137,7 @@ const Cards = React.memo(({ showWordInfo }) => {
                                     ?
                                     <div className="englishWord_block">
                                         <div className="englishWord words" onClick={() => translater(word.id)}>{word.englishWord}</div>
-                                        <div onClick={() => showWordInfo(word.info, word.id, word.englishWord, word.translateWord)} className="show_info_of_word">...inf</div>
+                                        <div onClick={() => showWordInfo(word.info, word.id, word.englishWord, word.translateWord, word.photo)} className="show_info_of_word">...inf</div>
                                     </div>
                                     :
                                     <div>{

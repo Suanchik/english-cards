@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import close from './assets/img/x.svg'
 import axios from 'axios';
 import Cards from './components/cards';
+import img from './assets/img/englishImg.jpg'
 
 
 const App = () => {
@@ -13,13 +14,15 @@ const App = () => {
   const [infoChanges, setinfoChanges] = useState(false);
   const [info, setinfo] = useState('');
   const [wordid, setId] = useState(null);
+  const [photo, setphoto] = useState(null);
 
-  const showWordInfo = (info, id, englishWord, translateWord) => {
+  const showWordInfo = (info, id, englishWord, translateWord, photo) => {
     setinfoChanges(false);
     setshowInfo(!showInfo);
     stinfowindow(!infowindow);
     setinfo(info);
     setId(id);
+    setphoto(photo);
     setwordsEnglRus(englishWord + ' - ' + translateWord);
     if (!infowindow) {
       console.log(document.body.classList.add('bodyImg'))
@@ -44,13 +47,15 @@ const App = () => {
           wordid={wordid} 
           info={info} 
           infowindow={infowindow}
+          photo={photo}
+          setphoto={setphoto}
         />
       </div>
     </div>
   )
 };
 
-const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid, info, setinfo, infowindow}) => {
+const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid, info, setinfo, infowindow, setphoto, photo}) => {
 
   const [sinonimvalue, setsinonimvalue] = useState(info.sinonim);
   const [mnchislovalue, setmnchislovalue] = useState(info.mnchislo);
@@ -62,6 +67,7 @@ const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid,
     setmnchislovalue(info.mnchislo);
     setexamplesvalue(info.examples);
     setVerbvalue(info.past);
+    setphoto(photo)
   }, [info])
 
 
@@ -77,6 +83,16 @@ const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid,
             setinfo(newInfo);
             setinfoChanges(!infoChanges);
         })
+    }
+
+    const addPhoto = (e) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setphoto(reader.result)
+        // const wordPhoto = reader.result
+        // axios.patch(`http://localhost:3001/words/` + wordid, {photo: wordPhoto})
+      }
+      reader.readAsDataURL(e.target.files[0])
     }
 
   return (
@@ -98,7 +114,12 @@ const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid,
                 {info.mnchislo ? <div>{info.mnchislo}</div> : <div className="defaultValue"><i>информация отсутствует</i></div>}
                 {info.past ? <div>{info.past}</div> : <div className="defaultValue"><i>информация отсутствует</i></div>}
                 {info.examples ? <div>{info.examples}</div> : <div className="defaultValue"><i>информация отсутствует</i></div>}
+                <div className="photo_block">
+              <input type="file" id="imgfile" onChange={(e) => addPhoto(e)} className="input" />
+              <label className="addPhoto" for="imgfile">добавить картинку</label>
             </div>
+            </div>
+              <img src={photo ? photo: img} className="word_photo" alt="word_photo" className="wordPhoto"/>
           </div>
           :
           <div className="words_info_block">

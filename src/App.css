@@ -128,6 +128,27 @@
 
 .wordPhoto {
   height: 250px;
+  margin-top: 25px;
+}
+
+.input {
+  display: none;
+}
+
+.addPhoto {
+  display: inline-block;
+  background-color: #2f9fa5;
+  color: white;
+  height: 20px;
+  width: 160px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0px 10px 0px 10px;
+}
+
+.photo_block {
+  float: left;
 }
 
 .changeInfo {
