@@ -118,6 +118,7 @@
 }
 
 .words_info_values {
+  color: rgb(100, 100, 158);
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -130,11 +131,9 @@
   height: 250px;
   margin-top: 25px;
 }
-
 .input {
   display: none;
 }
-
 .addPhoto {
   display: inline-block;
   background-color: #2f9fa5;

@@ -1,8 +1,8 @@
 .words_block {
-  height: 360px;
+  height: 510px;
   overflow: hidden;
   overflow-y: scroll;
-  margin-top: 30px;
+  margin-left: 15px;
 }
 
 .words_block::-webkit-scrollbar {
@@ -12,74 +12,124 @@
 .list_container {
   margin-top: 20px;
   padding: 30px;
-  background-color: #66a5ad;
-  height: 450px;
-  width: 436px;
-  margin-left: 50px;
+  height: 580px;
+  width: 456px;
+  margin-left: 46px;
+  box-shadow: 0 0 2px 0 black;
+  background-color: rgb(23, 226, 248);
+}
+
+.list_container:hover {
+  box-shadow: 0 0 4px 0 black;
+}
+
+.words {
+  display: inline-block;
+  min-height: 35px;
+  min-width: 145px;
+  max-width: 360px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: hidden;
+  word-wrap: break-word;
+  position: relative;
+  box-shadow: 0 0 3px 0 white;
+  color: black;
+  font-weight: bold;
+}
+
+.words span {
+  color: black;
+  float: left;
 }
 
 .englishWord {
   padding: 5px 12px 5px 12px;
-  background-color: white;
   text-align: center;
-  margin: 3px 0 0 135px;
-  display: flex;
+  margin: 3px 0 0 15px;
+  font-size: large;
+  width: 100%;
+  background-color: white;
 }
 
-.englishWord_block .show_info_of_word {
-  margin-left: 5px;
-  height: 20px;
-  width: 30px;
-  display: inline-block;
-  box-shadow: 0 0 2px 0 white;
-  border-radius: 40%;
-  padding: 4px 5px 0px 3px;
-  cursor: pointer;
-  background-color: rgb(0, 0, 0, 0.3);
-  font-size: 13px;
+.russianWord {
+  padding: 5px 12px 5px 12px;
+  color: white;
+  text-align: center;
+  margin: 3px 0 0 15px;
+  font-size: large;
+  width: 100%;
+  background-color: #22b5c5;
+}
+
+.englishWord:hover {
+  font-size: larger;
+  text-decoration: underline;
+  background-color: #22b5c5;
+}
+
+.englishWord:hover span {
   color: white;
 }
 
+.englishWord:hover div {
+  display: inline;
+  text-decoration: underline;
+  color: white;
+}
+
+.englishWord_block .show_info_of_word {
+  margin-left: 3px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 20%;
+  border: solid 2px white;
+}
+
 .englishWord_block .show_info_of_word:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: black;
-  box-shadow: 0 0 2px 0 white;
+  font-weight: bold;
+  color: rgb(0, 0, 0, 0.8);
+  text-decoration: underline;
+  background-color: #fff;
+  border: solid 2px rgb(0, 0, 0, 0.8);
 }
 
 .englishWord_block:hover .tochki {
   opacity: 0;
 }
 
-.russianWord {
-  background-color: #c4dfe6;
-  padding: 5px 12px 5px 12px;
+.russianWord:hover div {
+  display: inline;
+  text-decoration: underline;
   color: black;
-  text-align: center;
-  margin: 3px 0 0 135px;
 }
 
 .russianWord:hover {
-  background-color: #07575b;
+  text-decoration: underline;
+  background-color: white;
+  font-size: larger;
+}
+
+.russianWord span {
   color: white;
 }
 
-.changing_word {
-  background-color: white;
-  border: solid 2px #07575b;
-  padding: 5px 12px 5px 12px;
-  margin: 3px 0 0 135px;
+.russianWord:hover span {
+  color: black;
 }
 
-.words {
-  display: inline-block;
-  min-height: 20px;
-  min-width: 150px;
-  max-width: 250px;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: hidden;
-  word-wrap: break-word;
-  position: relative;
+.changing_word {
+  width: 100%;
+  border: solid 1px red;
+  color: red;
+  padding: 5px 12px 5px 12px;
+  margin: 8px 0 5px 14px;
+  text-align: center;
+  font-size: large;
 }
 
 input {
@@ -94,7 +144,7 @@ input {
   padding: 3px 40px 3px 40px;
   border-radius: 10px;
   font-weight: bold;
-  color: rgb(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.5);
   display: inline-block;
   width: 200px;
   text-align: center;
@@ -103,20 +153,18 @@ input {
 }
 
 .tochki {
-  width: 15px;
-  opacity: 0;
-  margin-left: 5px;
-  background-color: #fff;
-  padding: 0 2px 0 2px;
-  border-radius: 5px;
+  width: 18px;
+  display: inline;
+  opacity: 0.5;
+  margin-left: 12px;
 }
 
 .list_container .words:hover ~ .tochki {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .tochki:hover {
-  opacity: 0.8;
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -124,68 +172,73 @@ input {
   display: flex;
 }
 .popap_container {
+  width: 400px;
   display: flex;
-  margin: 3px 0 0px 130px;
+  margin: 3px 0 0px 6px;
+  background-color: #dddd;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0 black;
 }
 
 .change_input_place-2 {
   display: flex;
   margin-top: 10px;
-  margin-left: 21px;
 }
 
 .change_input_place-2 input {
   height: 25px;
-  width: 130px;
-  background-color: rgb(224, 240, 255);
+  background-color: rgb(241, 241, 241);
   border-radius: 5px;
   margin-bottom: 3px;
   border: solid 1px black;
 }
 
 .change_input_place-2 .right_change_input {
-  margin-left: 7px;
+  margin-left: 10px;
 }
 
 .change_input_place-1 {
-  border: solid 1px white;
-  margin: 5px 43px 0px 54px;
+  margin: 5px 43px 0px 18px;
   padding-bottom: 10px;
   border-radius: 5px;
-  background-color: #07575b;
+  width: 100%;
 }
 
 .popap img {
   display: inline;
-  border-radius: 1px 9px 9px 1px;
   cursor: pointer;
   padding: 3px;
-  opacity: 0.5;
-  width: 18px;
+  opacity: 0.3;
+  width: 15px;
   height: 18px;
   padding: 3px;
-  background-color: #fff;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-top: 6px;
 }
 
 .popap img:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .deleteChange {
   width: 75px;
-  margin: 5px 0 5px 5px;
+  margin: 5px 0 5px 15px;
   padding: 3px 5px 3px 5px;
   border-radius: 5px;
   cursor: pointer;
   display: inline;
   text-align: center;
   background-color: #fff;
+  width: 160px;
+}
+
+.popap .change {
+  margin-left: 10px;
 }
 
 .deleteChange:hover {
-  font-weight: bold;
+  box-shadow: 0 1px 1px 1px rgb(0, 0, 0, 0.5);
 }
 
 .changes_block span:hover {
@@ -197,19 +250,21 @@ input {
 }
 
 .changes_block {
+  padding: 5px 0 5px 0;
   display: flex;
   margin-top: 5px;
-  margin-left: 67px;
+  margin-left: 0px;
 }
 
 .changes_block div {
-  width: 88px;
+  border: solid 1px black;
+  width: 173px;
   padding: 3px 0px 5px 0px;
   border-radius: 5px;
   cursor: pointer;
   color: black;
   text-align: center;
-  margin-left: 9px;
+  margin-left: 10px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -217,9 +272,13 @@ input {
   width: 20px;
   padding: 5px;
   background-color: #fff;
-  border-radius: 50%;
+  border-radius: 20%;
   cursor: pointer;
   text-align: center;
+}
+
+.arrow_up img:hover {
+  box-shadow: 0 0 3px 0 black;
 }
 
 .arrow_up {
@@ -237,7 +296,22 @@ input {
   margin-left: 41%;
   background-color: #fff;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-weight: bold;
   border-radius: 2px;
+}
+
+.leftright {
+  width: 60px;
+  height: 25px;
+  display: block;
+  margin-left: 43%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 0 5px 0 5px;
+  cursor: pointer;
+}
+
+.leftright:hover {
+  box-shadow: 0 0 2px 0 black;
 }

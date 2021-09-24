@@ -11,7 +11,7 @@
         "sinonim": "kid, baby",
         "mnchislo": "children n nmnnm",
         "past": "",
-        "examples": "He is but a child - Он всего лишь ребёнок. She's such a child! - Она такой ребёнок!. Нe is our only child - Он — наш единственный ребёнок."
+        "examples": "He is just a child - Он всего лишь ребёнок. She's such a child! - Она такой ребёнок!. Нe is our only child - Он — наш единственный ребёнок."
       }
     },
     {
@@ -148,6 +148,20 @@
       "isshow": false,
       "inputisopened": false,
       "info": {
+        "sinonim": "iiiiiiiii",
+        "mnchislo": null,
+        "past": "",
+        "examples": ""
+      }
+    },
+    {
+      "englishWord": "pen",
+      "translateWord": "ручка",
+      "edit": false,
+      "id": 0.3935126204665296,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
         "past": "",
         "sinonim": null,
         "mnchislo": null,
@@ -156,10 +170,144 @@
       }
     },
     {
-      "englishWord": "pen",
-      "translateWord": "ручка",
+      "englishWord": "some",
+      "translateWord": "некоторый",
       "edit": false,
-      "id": 0.3935126204665296,
+      "id": 3.3647340813276805,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "other",
+      "translateWord": "другой",
+      "edit": false,
+      "id": 4.032235604619033,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "witch",
+      "translateWord": "который",
+      "edit": false,
+      "id": 1.6568704832992664,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "sinonim": "what",
+        "mnchislo": null,
+        "past": "",
+        "examples": ""
+      }
+    },
+    {
+      "englishWord": "how",
+      "translateWord": "как",
+      "edit": false,
+      "id": 1.585701183540612,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "where",
+      "translateWord": "где",
+      "edit": false,
+      "id": 0.7866730468948813,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "why",
+      "translateWord": "почему",
+      "edit": false,
+      "id": 1.521204236392184,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "hand",
+      "translateWord": "рука",
+      "edit": false,
+      "id": 0.32570985386630613,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "read",
+      "translateWord": "читать",
+      "edit": false,
+      "id": 2.3399866616920106,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "ask",
+      "translateWord": "спрашивать",
+      "edit": false,
+      "id": 0.2200552359132424,
+      "isshow": false,
+      "inputisopened": false,
+      "info": {
+        "past": "",
+        "sinonim": null,
+        "mnchislo": null,
+        "examples": "",
+        "photo": null
+      }
+    },
+    {
+      "englishWord": "change",
+      "translateWord": "менять",
+      "edit": false,
+      "id": 3.4934826864419377,
       "isshow": false,
       "inputisopened": false,
       "info": {

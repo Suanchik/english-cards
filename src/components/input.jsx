@@ -40,7 +40,7 @@ function Input({ addWord }) {
                 <div className="russianInput"><div>рус</div><input ref={rusRef} onChange={() => setrussvalue(rusRef.current.value)} value={russvalue} /></div>
                 <div className="englishInput"><div>eng</div><input ref={engRef} onChange={() => setengvalue(engRef.current.value)} value={englvalue} /></div>
             </div>
-            <div className="add_word" onClick={addNewWord}>ДОБАВИТЬ СЛОВО</div>
+            <div className="add_word" onClick={addNewWord}><div>ДОБАВИТЬ СЛОВО</div></div>
         </div>
     )
 }

@@ -7,13 +7,15 @@ import tochki from './../assets/img/tochki.png';
 import close from './../assets/img/x.svg';
 import up from './../assets/img/up.png';
 import down from './../assets/img/down.png';
+import leftright from './../assets/img/leftright.png';
 
 const Cards = React.memo(({ showWordInfo }) => {
 
     const [slova, setslova] = useState(null);
     const [russvalue, setrussvalue] = useState('');
     const [englvalue, setengvalue] = useState('');
-    const [carrentPage, setcarrentPage] = useState(1)
+    const [carrentPage, setcarrentPage] = useState(1);
+    const [num, setnumPage] = useState(1);
 
     const [startNumber, setstartNumber] = useState(0);
     const [endNumber, setendNumber] = useState(10);
@@ -23,7 +25,6 @@ const Cards = React.memo(({ showWordInfo }) => {
 
     let slovaCopy = null;
     slovaCopy = slova && slova.length !== 0 ? [...slova].reverse() : null;
-
     const halfSlova = slovaCopy?.filter((word, index) => index >= startNumber && index < endNumber);
 
     const UpButton = () => {
@@ -43,7 +44,7 @@ const Cards = React.memo(({ showWordInfo }) => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/words`).then((res) => {
+        axios.get(`/words`).then((res) => {
             setslova(res.data)
         })
     }, []);
@@ -68,7 +69,7 @@ const Cards = React.memo(({ showWordInfo }) => {
 
 
     const addWord = (newWordObj) => {
-        axios.post(`http://localhost:3001/words`, newWordObj).then(() => {
+        axios.post(`/words`, newWordObj).then(() => {
             const changedWords = [
                 ...slova,
                 newWordObj
@@ -77,12 +78,20 @@ const Cards = React.memo(({ showWordInfo }) => {
         })
     };
 
+    const changeTranslator = () => {
+        const newSlova = slova.map(el => {
+            el.edit = !el.edit
+            return el
+        }
+        );
+        setslova(newSlova);
+    }
 
     const deleteWord = (id) => {
         axios({
             method: 'DELETE',
             params: id,
-            url: 'http://localhost:3001/words/' + id,
+            url: '/words/' + id,
         }).then(() => {
             const changedWords = slova.filter(card => card.id !== id)
             setslova(changedWords)
@@ -95,7 +104,7 @@ const Cards = React.memo(({ showWordInfo }) => {
         const changedWords = slova.map(card => { return { ...card } })
         const element = changedWords.findIndex(el => el.id === id);
         if (russvalue && englvalue) {
-            axios.patch('http://localhost:3001/words/' + id, {
+            axios.patch('/words/' + id, {
                 englishWord: englvalue,
                 translateWord: russvalue
             }).then(() => {
@@ -127,22 +136,32 @@ const Cards = React.memo(({ showWordInfo }) => {
                     <div className="arrow_up downButton">
                         <img onClick={Dounbutton} src={down} alt="down" />
                     </div>
+                    <img className="leftright" onClick={changeTranslator} src={leftright} alt="leftright" />
                 </div>
                 <div className="words_block">
                     {halfSlova
                         ?
                         halfSlova.map((word, index) =>
                             <div key={index}>
-                                {word.edit
+                                {!word.edit
                                     ?
                                     <div className="englishWord_block">
-                                        <div className="englishWord words" onClick={() => translater(word.id)}>{word.englishWord}</div>
-                                        <div onClick={() => showWordInfo(word.info, word.id, word.englishWord, word.translateWord, word.photo)} className="show_info_of_word">...inf</div>
+                                        <div title="click me to translate" className="englishWord words" onClick={() => translater(word.id)}>
+                                            <span>
+                                                {slovaCopy.findIndex((sl) => word.englishWord === sl.englishWord) + 1}
+                                            </span>
+                                            <div>{word.englishWord}</div></div>
+                                        <div onClick={() => showWordInfo(word.info, word.id, word.englishWord, word.translateWord, word.photo)} className="show_info_of_word">inf...</div>
                                     </div>
                                     :
                                     <div>{
                                         !word.inputisopened ?
-                                            <div onClick={() => translater(word.id)} className={word.isshow ? "changing_word words" : "russianWord words"}>{word.translateWord}</div>
+                                            <div title="нажми что бы перевести" onClick={() => translater(word.id)} className={word.isshow ? "changing_word words" : "russianWord words"}>
+                                                <span>
+                                                    {slovaCopy.findIndex((sl) => word.translateWord === sl.translateWord) + 1}
+                                                </span>
+                                                <div>{word.translateWord}</div>
+                                            </div>
                                             :
                                             <div className="change_input_place-1">
                                                 <div className="change_input_place-2">
@@ -156,13 +175,13 @@ const Cards = React.memo(({ showWordInfo }) => {
                                             </div>}
                                         {!word.isshow
                                             ?
-                                            <img onClick={() => showmenu(word.id)} className="tochki" src={tochki} alt="img" />
+                                            <img src={tochki} onClick={() => showmenu(word.id)} className="tochki" />
                                             :
                                             <div className="popap_container">
                                                 {!word.inputisopened ?
                                                     <div className="popap">
                                                         <div onClick={() => deleteWord(word.id)} className="deleteChange">удалить</div>
-                                                        <div onClick={() => changeinputisopened(word.id)} className="deleteChange">изменить</div>
+                                                        <div onClick={() => changeinputisopened(word.id)} className="deleteChange change">изменить</div>
                                                         <img onClick={() => showmenu(word.id)} src={close} alt="img" />
                                                     </div>
                                                     :

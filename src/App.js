@@ -79,21 +79,21 @@ const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid,
       past: verbvalue,
       examples: examplesvalue,
     }
-    axios.patch(`http://localhost:3001/words/` + wordid, {info: newInfo}).then(() => {
+    axios.patch(`/words/` + wordid, {info: newInfo}).then(() => {
             setinfo(newInfo);
             setinfoChanges(!infoChanges);
         })
     }
 
-    const addPhoto = (e) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setphoto(reader.result)
-        // const wordPhoto = reader.result
-        // axios.patch(`http://localhost:3001/words/` + wordid, {photo: wordPhoto})
-      }
-      reader.readAsDataURL(e.target.files[0])
-    }
+    // const addPhoto = (e) => {
+    //   const reader = new FileReader();
+    //   reader.onload = () => {
+    //     setphoto(reader.result)
+    //     // const wordPhoto = reader.result
+    //     // axios.patch(`/words/` + wordid, {photo: wordPhoto})
+    //   }
+    //   reader.readAsDataURL(e.target.files[0])
+    // }
 
   return (
     <div>
@@ -115,11 +115,11 @@ const Info = ({ wordsEnglRus, showWordInfo, setinfoChanges, infoChanges, wordid,
                 {info.past ? <div>{info.past}</div> : <div className="defaultValue"><i>информация отсутствует</i></div>}
                 {info.examples ? <div>{info.examples}</div> : <div className="defaultValue"><i>информация отсутствует</i></div>}
                 <div className="photo_block">
-              <input type="file" id="imgfile" onChange={(e) => addPhoto(e)} className="input" />
-              <label className="addPhoto" for="imgfile">добавить картинку</label>
+              {/* <input type="file" id="imgfile" onChange={(e) => addPhoto(e)} className="input" />
+              <label className="addPhoto" for="imgfile">добавить картинку</label> */}
             </div>
             </div>
-              <img src={photo ? photo: img} className="word_photo" alt="word_photo" className="wordPhoto"/>
+              {/* <img src={photo ? photo: img} className="word_photo" alt="word_photo" className="wordPhoto"/> */}
           </div>
           :
           <div className="words_info_block">

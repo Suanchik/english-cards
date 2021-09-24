@@ -12,20 +12,29 @@
 }
 
 .add_word {
-  border: solid 2px white;
-  color: white;
-  width: 376px;
+  color: black;
+  width: 486px;
   font-weight: bold;
   padding: 10px;
-  border-radius: 5px 5px 5px 5px;
   cursor: pointer;
   text-align: center;
-  background-color: #07575b;
-  margin-left: 100px;
+  margin-left: 51px;
+  box-shadow: 0 0 1px 0 black;
+  background-color: rgba(116, 194, 175);
+}
+
+.add_word div {
+  display: inline;
 }
 
 .add_word:hover {
-  background-color: #003b46;
+  box-shadow: 0 0 3px 0 black;
+  background-color: rgb(98, 167, 149);
+  color: white;
+}
+
+.add_word:hover div {
+  text-decoration: underline;
 }
 
 .inputPlace {
