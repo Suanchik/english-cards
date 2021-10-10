@@ -15,12 +15,8 @@
   height: 580px;
   width: 456px;
   margin-left: 46px;
-  box-shadow: 0 0 2px 0 black;
-  background-color: rgb(23, 226, 248);
-}
-
-.list_container:hover {
-  box-shadow: 0 0 4px 0 black;
+  box-shadow: 0 0 1px 0 black;
+  background-color: #01a9b4;
 }
 
 .words {
@@ -33,7 +29,6 @@
   outline: hidden;
   word-wrap: break-word;
   position: relative;
-  box-shadow: 0 0 3px 0 white;
   color: black;
   font-weight: bold;
 }
@@ -49,33 +44,34 @@
   margin: 3px 0 0 15px;
   font-size: large;
   width: 100%;
-  background-color: white;
+  background-color: #f6f7c1;
+}
+
+.englishWord span {
+  opacity: 0.4;
+}
+
+.englishWord:hover span {
+  opacity: 1;
 }
 
 .russianWord {
   padding: 5px 12px 5px 12px;
-  color: white;
+  color: #f6f7c1;
   text-align: center;
   margin: 3px 0 0 15px;
   font-size: large;
   width: 100%;
-  background-color: #22b5c5;
+  background-color: #086972;
 }
 
 .englishWord:hover {
   font-size: larger;
-  text-decoration: underline;
-  background-color: #22b5c5;
-}
-
-.englishWord:hover span {
-  color: white;
 }
 
 .englishWord:hover div {
   display: inline;
   text-decoration: underline;
-  color: white;
 }
 
 .englishWord_block .show_info_of_word {
@@ -87,15 +83,14 @@
   color: rgb(255, 255, 255);
   padding: 5px;
   border-radius: 20%;
-  border: solid 2px white;
 }
 
 .englishWord_block .show_info_of_word:hover {
   font-weight: bold;
   color: rgb(0, 0, 0, 0.8);
   text-decoration: underline;
-  background-color: #fff;
-  border: solid 2px rgb(0, 0, 0, 0.8);
+  background-color: #87dfd6;
+  border: solid 1px #086972;
 }
 
 .englishWord_block:hover .tochki {
@@ -105,27 +100,27 @@
 .russianWord:hover div {
   display: inline;
   text-decoration: underline;
-  color: black;
 }
 
 .russianWord:hover {
   text-decoration: underline;
-  background-color: white;
   font-size: larger;
 }
 
 .russianWord span {
-  color: white;
+  color: #f6f7c1;
+  opacity: 0.4;
 }
 
 .russianWord:hover span {
-  color: black;
+  color: #f6f7c1;
+  opacity: 1;
 }
 
 .changing_word {
   width: 100%;
-  border: solid 1px red;
-  color: red;
+  border: solid 1px white;
+  color: black;
   padding: 5px 12px 5px 12px;
   margin: 8px 0 5px 14px;
   text-align: center;
@@ -155,7 +150,7 @@ input {
 .tochki {
   width: 18px;
   display: inline;
-  opacity: 0.5;
+  opacity: 0;
   margin-left: 12px;
 }
 
@@ -231,6 +226,7 @@ input {
   text-align: center;
   background-color: #fff;
   width: 160px;
+  box-shadow: 0 1px 1px 1px rgb(0, 0, 0, 0.5);
 }
 
 .popap .change {
@@ -238,7 +234,7 @@ input {
 }
 
 .deleteChange:hover {
-  box-shadow: 0 1px 1px 1px rgb(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 0 rgb(0, 0, 0, 0.5);
 }
 
 .changes_block span:hover {
@@ -314,4 +310,5 @@ input {
 
 .leftright:hover {
   box-shadow: 0 0 2px 0 black;
+  background-color: #87dfd6;
 }

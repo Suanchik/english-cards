@@ -12,7 +12,7 @@
 }
 
 .add_word {
-  color: black;
+  color: #87dfd6;
   width: 486px;
   font-weight: bold;
   padding: 10px;
@@ -20,7 +20,7 @@
   text-align: center;
   margin-left: 51px;
   box-shadow: 0 0 1px 0 black;
-  background-color: rgba(116, 194, 175);
+  background-color: #086972;
 }
 
 .add_word div {
@@ -29,13 +29,13 @@
 
 .add_word:hover {
   box-shadow: 0 0 3px 0 black;
-  background-color: rgb(98, 167, 149);
+  background-color: #086972;
   color: white;
 }
 
-.add_word:hover div {
+/* .add_word:hover div {
   text-decoration: underline;
-}
+} */
 
 .inputPlace {
   display: flex;

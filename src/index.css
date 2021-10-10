@@ -3,7 +3,7 @@ body {
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(161, 246, 255, 0.8);
+  background-color: #87dfd6;
 }
 
 .bodyImg::before {

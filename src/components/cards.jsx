@@ -143,7 +143,7 @@ const Cards = React.memo(({ showWordInfo }) => {
                         ?
                         halfSlova.map((word, index) =>
                             <div key={index}>
-                                {!word.edit
+                                {word.edit
                                     ?
                                     <div className="englishWord_block">
                                         <div title="click me to translate" className="englishWord words" onClick={() => translater(word.id)}>
@@ -152,6 +152,7 @@ const Cards = React.memo(({ showWordInfo }) => {
                                             </span>
                                             <div>{word.englishWord}</div></div>
                                         <div onClick={() => showWordInfo(word.info, word.id, word.englishWord, word.translateWord, word.photo)} className="show_info_of_word">inf...</div>
+
                                     </div>
                                     :
                                     <div>{
@@ -162,6 +163,7 @@ const Cards = React.memo(({ showWordInfo }) => {
                                                 </span>
                                                 <div>{word.translateWord}</div>
                                             </div>
+
                                             :
                                             <div className="change_input_place-1">
                                                 <div className="change_input_place-2">
