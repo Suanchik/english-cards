@@ -15,7 +15,6 @@ const Cards = React.memo(({ showWordInfo }) => {
     const [russvalue, setrussvalue] = useState('');
     const [englvalue, setengvalue] = useState('');
     const [carrentPage, setcarrentPage] = useState(1);
-    const [num, setnumPage] = useState(1);
 
     const [startNumber, setstartNumber] = useState(0);
     const [endNumber, setendNumber] = useState(10);
@@ -55,17 +54,19 @@ const Cards = React.memo(({ showWordInfo }) => {
         }
     }, [[halfSlova?.length]])
 
-    const changes = (id, param) => {
+    const changes = (id, param, engl = null, russ = null) => {
         const changedWords = slova.map(card => { return { ...card } });
         const element = changedWords.findIndex(el => el.id === id);
         changedWords[element][param] = !changedWords[element][param];
-        setslova(changedWords)
+        setslova(changedWords);
+        setengvalue(engl);
+        setrussvalue(russ);
     }
 
     const translater = (id) => { changes(id, 'edit') };
     const showmenu = (id) => { changes(id, 'isshow') };
     const showaddmenu = (id) => { changes(id, 'inputisopened') };
-    const changeinputisopened = (id) => { changes(id, 'inputisopened') };
+    const changeinputisopened = (id, engl, russ) => { changes(id, 'inputisopened', engl, russ) };
 
 
     const addWord = (newWordObj) => {
@@ -128,16 +129,7 @@ const Cards = React.memo(({ showWordInfo }) => {
         <Fragment>
             <Input addWord={addWord} />
             <div className="list_container">
-                <div className="arrows_block">
-                    <div className="arrow_up">
-                        <img onClick={UpButton} src={up} alt="up" />
-                    </div>
-                    <div className="pages">{carrentPage}</div>
-                    <div className="arrow_up downButton">
-                        <img onClick={Dounbutton} src={down} alt="down" />
-                    </div>
-                    <img className="leftright" onClick={changeTranslator} src={leftright} alt="leftright" />
-                </div>
+                <Pages UpButton={UpButton} carrentPage={carrentPage} Dounbutton={Dounbutton} changeTranslator={changeTranslator} />
                 <div className="words_block">
                     {halfSlova
                         ?
@@ -183,7 +175,7 @@ const Cards = React.memo(({ showWordInfo }) => {
                                                 {!word.inputisopened ?
                                                     <div className="popap">
                                                         <div onClick={() => deleteWord(word.id)} className="deleteChange">удалить</div>
-                                                        <div onClick={() => changeinputisopened(word.id)} className="deleteChange change">изменить</div>
+                                                        <div onClick={() => changeinputisopened(word.id, word.englishWord, word.translateWord)} className="deleteChange change">изменить</div>
                                                         <img onClick={() => showmenu(word.id)} src={close} alt="img" />
                                                     </div>
                                                     :
@@ -205,3 +197,18 @@ const Cards = React.memo(({ showWordInfo }) => {
 })
 
 export default Cards;
+
+const Pages = ({ UpButton, carrentPage, Dounbutton, changeTranslator }) => {
+    return (
+        <div className="arrows_block">
+            <div className="arrow_up">
+                <img onClick={UpButton} src={up} alt="up" />
+            </div>
+            <div className="pages">{carrentPage}</div>
+            <div className="arrow_up downButton">
+                <img onClick={Dounbutton} src={down} alt="down" />
+            </div>
+            <img className="leftright" onClick={changeTranslator} src={leftright} alt="leftright" />
+        </div>
+    )
+}
